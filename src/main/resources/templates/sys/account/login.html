@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>login</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+
+</head>
+<body>
+
+<#include "/shared/navbar.html">
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-xl-8 col-lg-7 col-md-6 d-none d-md-block">
+            <p>
+                Welcome!!!!
+                <a href="/account/register"><@spring.message "template.register"/></a>
+            </p>
+        </div>
+        <div class="col-xl-4 col-lg-5 col-md-6">
+            <form class="form-login" action="/account/login" method="post">
+                <div class="text-center">
+                    <img class="mb-3 mt-3" src="/static/img/logo-solid.svg" alt="" width="72" height="72">
+                </div>
+                <h1 class="h3 mb-3 font-weight-normal">Sign in to MyPress</h1>
+                <#if SPRING_SECURITY_LAST_EXCEPTION??>
+                <p class="login-box-msg"><span style="color: red;">${SPRING_SECURITY_LAST_EXCEPTION.message}</span></p>
+                </#if>
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" name="username" class="form-control" id="inputUsername" aria-describedby="usernameHelp" value="${(username)!}">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" class="form-control" id="inputPassword" value="${(password)!}">
+                </div>
+                <div class="form-check mb-3">
+                    <label>
+                        <input type="checkbox" name="rememberMe" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-success btn-block" type="submit"><@spring.message "template.login"/></button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/static/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script src="/static/plugins/popper/popper.min.js"></script>
+<script src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/plugins/fontawesome/js/fontawesome-all.min.js"></script>
+</body>
+</html>

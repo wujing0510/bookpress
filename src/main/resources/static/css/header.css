@@ -1,0 +1,33 @@
+
+/*.bd-navbar {*/
+    /*min-height: 4rem;*/
+    /*background-color: #563d7c;*/
+    /*!*background-color: #3c8dbc;*!*/
+    /*box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);*/
+/*}*/
+
+/*.bd-navbar .navbar-nav .nav-link {*/
+    /*padding-right: .5rem;*/
+    /*padding-left: .5rem;*/
+/*}*/
+
+/*.bd-navbar .navbar-nav .nav-link .active,*/
+/*.bd-navbar .navbar-nav .nav-link :hover {*/
+    /*color: #fff;*/
+    /*background-color: transparent;*/
+/*}*/
+
+/*.bd-navbar .navbar-nav .nav-link .active {*/
+    /*font-weight: 500;*/
+/*}*/
+
+/*.bd-navbar .navbar-nav-svg {*/
+    /*display: inline-block;*/
+    /*width: 1rem;*/
+    /*height: 1rem;*/
+    /*vertical-align: text-top;*/
+/*}*/
+
+/*.bd-navbar .dropdown-menu {*/
+    /*font-size: .875rem;*/
+/*}*/

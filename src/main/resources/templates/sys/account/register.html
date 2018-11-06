@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>login</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+
+</head>
+<body>
+
+<#include "/shared/navbar.html">
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-xl-8 col-lg-7 col-md-6">
+            <form action="/account/register" method="post">
+                <div class="text-center">
+                    <img class="mb-3 mt-3" src="/static/img/logo-solid.svg" alt="" width="72" height="72">
+                </div>
+                <h1 class="h3 mb-1">Join MyPress</h1>
+                <small class="form-text text-muted mb-3">The best way to design, build, and ship Idea.</small>
+                <div class="form-group">
+                    <@spring.bind "registerVo.username" />
+                    <label for="inputUsername">Username</label>
+                    <input type="text" name="username" class="form-control" id="inputUsername" aria-describedby="usernameHelp" value="${(registerVo.username)!}">
+                    <small class="form-text text-muted"><@spring.showErrors "<br/>" "text-danger"/></small>
+                    <small class="form-text text-muted">This will be your username. You can add the name of your organization later.</small>
+                </div>
+                <div class="form-group">
+                    <@spring.bind "registerVo.email" />
+                    <label for="inputEmail">Email</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" value="${(registerVo.email)!}">
+                    <small class="form-text text-muted"><@spring.showErrors "<br/>" "text-danger"/></small>
+                    <small class="form-text text-muted">We'll occasionally send updates about your account to this inbox. We'll never share your email address with anyone.</small>
+                </div>
+                <div class="form-group">
+                    <@spring.bind "registerVo.password" />
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" class="form-control" id="inputPassword" value="${(registerVo.password)!}">
+                    <small class="form-text text-muted"><@spring.showErrors "<br/>" "text-danger"/></small>
+                    <small class="form-text text-muted">Use at least one lowercase letter, one numeral, and seven characters.</small>
+                </div>
+                <div class="form-group">
+                    <@spring.bind "registerVo.repeatPassword" />
+                    <label for="inputRepeatPassword">Repeat Password</label>
+                    <input type="password" name="repeatPassword" class="form-control" id="inputRepeatPassword" value="${(registerVo.repeatPassword)!}">
+                    <small class="form-text text-muted"><@spring.showErrors "<br/>" "text-danger"/></small>
+                </div>
+                <p>
+                    By clicking “Create an account” below, you agree to our
+                    <a href="/site/terms" target="_blank">terms of service</a> and
+                    <a href="/site/privacy" target="_blank">privacy statement</a>. We’ll occasionally send you account related emails.
+                </p>
+                <button class="btn btn-success btn-block" type="submit">Create an account</button>
+            </form>
+        </div>
+        <div class="col-xl-4 col-lg-5 col-md-6 d-none d-md-block">
+
+        </div>
+    </div>
+</div>
+
+<script src="/static/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script src="/static/plugins/popper/popper.min.js"></script>
+<script src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/plugins/fontawesome/js/fontawesome-all.min.js"></script>
+
+</body>
+</html>
